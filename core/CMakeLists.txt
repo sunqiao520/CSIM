@@ -106,5 +106,5 @@ add_library(${PROJECT_NAME} SHARED
     ${BISON_ALGEBRAIC_OUT}
 )
 
-target_link_libraries(${PROJECT_NAME} csimUtils gcov)
+target_link_libraries(${PROJECT_NAME} csimUtils gcov dl)
 add_coverage(${PROJECT_NAME})

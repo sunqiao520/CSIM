@@ -112,7 +112,7 @@ namespace csim
         const Variable &Vn1 = dset.getDependentVar("voltage", analyzer->makeVarName("V", n1));
         for(size_t i=0; i<F.getNumValues(); ++i) {
             csimModel::MComplex _volt = Vn1.at(i) - Vgnd.at(i);
-            auto volt = std::complex(_volt.real(), _volt.imag());
+            auto volt = std::complex<double>(_volt.real(), _volt.imag());
             double omega = F.at(i).real() * 2 * M_PI;
             std::complex<double> z(R, omega*L - 1.0/(omega * C));
             auto Ic = Vp / z;
